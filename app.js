@@ -5,9 +5,14 @@ function sortear() {
 
     let sortudos [];
     let numero;
+    let resultado = document.getElementById('resultado');
+    resultado.innerHTML = `<label class="texto__paragrafo">Números sorteados:  ${sortudos}</label>`
 
     for (let i = 0 < quantidade; i++) {
         numero = obterNumeroAleatorio(de, ate);
+        while (sortudos.includes(numero)){
+            numero = obterNumeroAleatorio(de, ate);
+        }
         sortudos.push(numero);
     }
 }
